@@ -1,0 +1,420 @@
+{
+  "exam_id": "F24",
+  "term": "Fall",
+  "year": 2024,
+  "exam_index": 2,
+  "age": 3,
+  "version": "V1",
+  "source_file": "Exam_1_Fall_2024.pdf",
+  "total_points": 105,
+  "sections": [
+    {
+      "type": "TF",
+      "n_items": 6,
+      "points": 12,
+      "items": [
+        {
+          "id": "F24-TF-1.1",
+          "number": "1.1",
+          "points": 2,
+          "tags": [
+            "data_types_graphs"
+          ],
+          "subskills": [
+            "graph_choice_categorical"
+          ],
+          "has_figure": false,
+          "summary": "Histogram appropriate for categorical mail types?"
+        },
+        {
+          "id": "F24-TF-1.2",
+          "number": "1.2",
+          "points": 2,
+          "tags": [
+            "data_types_graphs"
+          ],
+          "subskills": [
+            "parameter_vs_statistic"
+          ],
+          "has_figure": false,
+          "summary": "Rate computed from all units is a statistic?"
+        },
+        {
+          "id": "F24-TF-1.3",
+          "number": "1.3",
+          "points": 2,
+          "tags": [
+            "poisson"
+          ],
+          "subskills": [
+            "rate_scaling",
+            "variance_equals_mean"
+          ],
+          "has_figure": false,
+          "summary": "Variance of counts over 1 hr vs 2 hr windows."
+        },
+        {
+          "id": "F24-TF-1.4",
+          "number": "1.4",
+          "points": 2,
+          "tags": [
+            "pdf_cdf_properties"
+          ],
+          "subskills": [
+            "cdf_monotone_limits"
+          ],
+          "has_figure": false,
+          "summary": "CDF value beyond the support of a pdf on a negative interval."
+        },
+        {
+          "id": "F24-TF-1.5",
+          "number": "1.5",
+          "points": 2,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "zscore_comparison"
+          ],
+          "has_figure": false,
+          "summary": "Same score on two exams: which is relatively better?"
+        },
+        {
+          "id": "F24-TF-1.6",
+          "number": "1.6",
+          "points": 2,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "spread_vs_curve_shape"
+          ],
+          "has_figure": true,
+          "summary": "Two Normal curves: does the narrower one have more area?"
+        }
+      ]
+    },
+    {
+      "type": "MC",
+      "n_items": 5,
+      "points": 15,
+      "items": [
+        {
+          "id": "F24-MC-2.1",
+          "number": "2.1",
+          "points": 3,
+          "tags": [
+            "poisson"
+          ],
+          "subskills": [
+            "conditional_independent_intervals",
+            "rate_scaling"
+          ],
+          "has_figure": false,
+          "summary": "P(Y=3 | X=6) for non-overlapping UPS intervals."
+        },
+        {
+          "id": "F24-MC-2.2",
+          "number": "2.2",
+          "points": 3,
+          "tags": [
+            "exponential",
+            "conditional_continuous"
+          ],
+          "subskills": [
+            "memoryless",
+            "conditional_tail_probability"
+          ],
+          "has_figure": false,
+          "summary": "P(T>35 | T>20) with mean 15 between arrivals."
+        },
+        {
+          "id": "F24-MC-2.3",
+          "number": "2.3",
+          "points": 3,
+          "tags": [
+            "binomial_conceptual"
+          ],
+          "subskills": [
+            "symmetry",
+            "moments_identity"
+          ],
+          "has_figure": false,
+          "summary": "Which statement is not always true about Bin(10,0.1) and Bin(10,0.9)."
+        },
+        {
+          "id": "F24-MC-2.4",
+          "number": "2.4",
+          "points": 3,
+          "tags": [
+            "expectation_variance_linear"
+          ],
+          "subskills": [
+            "sum_independent",
+            "variance_shortcut_EX2"
+          ],
+          "has_figure": false,
+          "summary": "E[(e^X - 3Y)^2] from moments of e^X and Y."
+        },
+        {
+          "id": "F24-MC-2.5",
+          "number": "2.5",
+          "points": 3,
+          "tags": [
+            "boxplot_interpretation_robustness"
+          ],
+          "subskills": [
+            "skew_from_shape",
+            "resistant_measures"
+          ],
+          "has_figure": true,
+          "summary": "True statement about a skewed variable X (mean vs median, IQR, Q-distances)."
+        }
+      ]
+    },
+    {
+      "type": "FRQ",
+      "n_items": 3,
+      "points": 78,
+      "items": [
+        {
+          "id": "F24-FRQ-3",
+          "number": "3",
+          "points": 20,
+          "block_template": "normal",
+          "scenario": "Highway vehicle speeds",
+          "tags": [
+            "normal_forward",
+            "normal_backward"
+          ],
+          "subskills": [
+            "tail_probability",
+            "zscore_compute",
+            "between_two_values",
+            "top_pct_cutoff"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "F24-FRQ-3a",
+              "label": "a",
+              "points": 2,
+              "tags": [
+                "normal_forward"
+              ],
+              "subskills": [
+                "tail_probability"
+              ],
+              "has_figure": false,
+              "summary": "P(speed < mu + 3 sigma)."
+            },
+            {
+              "id": "F24-FRQ-3b",
+              "label": "b",
+              "points": 2,
+              "tags": [
+                "normal_forward"
+              ],
+              "subskills": [
+                "zscore_compute"
+              ],
+              "has_figure": false,
+              "summary": "z-score of the posted limit."
+            },
+            {
+              "id": "F24-FRQ-3c",
+              "label": "c",
+              "points": 8,
+              "tags": [
+                "normal_forward"
+              ],
+              "subskills": [
+                "between_two_values"
+              ],
+              "has_figure": false,
+              "summary": "P(61 < speed < 71)."
+            },
+            {
+              "id": "F24-FRQ-3d",
+              "label": "d",
+              "points": 8,
+              "tags": [
+                "normal_backward"
+              ],
+              "subskills": [
+                "top_pct_cutoff"
+              ],
+              "has_figure": false,
+              "summary": "Ticket cutoff for the top 4%."
+            }
+          ]
+        },
+        {
+          "id": "F24-FRQ-4",
+          "number": "4",
+          "points": 26,
+          "block_template": "prob_rules",
+          "scenario": "Digit classifier confusion matrix",
+          "tags": [
+            "event_relations_independence",
+            "conditional_bayes_total_prob"
+          ],
+          "subskills": [
+            "mutually_exclusive_vs_independent",
+            "subset_relations",
+            "union_rule",
+            "contingency_table",
+            "conditional_given_event",
+            "independence_check"
+          ],
+          "has_figure": true,
+          "parts": [
+            {
+              "id": "F24-FRQ-4a",
+              "label": "a",
+              "points": 3,
+              "tags": [
+                "event_relations_independence"
+              ],
+              "subskills": [
+                "mutually_exclusive_vs_independent",
+                "subset_relations",
+                "union_rule"
+              ],
+              "has_figure": false,
+              "summary": "Pick the true statement about three defined events."
+            },
+            {
+              "id": "F24-FRQ-4b",
+              "label": "b",
+              "points": 5,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "contingency_table"
+              ],
+              "has_figure": false,
+              "summary": "Marginal P(true label = 3) from the table."
+            },
+            {
+              "id": "F24-FRQ-4c",
+              "label": "c",
+              "points": 5,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "contingency_table"
+              ],
+              "has_figure": false,
+              "summary": "Marginal P(predicted = 3)."
+            },
+            {
+              "id": "F24-FRQ-4d",
+              "label": "d",
+              "points": 8,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "conditional_given_event",
+                "contingency_table"
+              ],
+              "has_figure": false,
+              "summary": "P(predicted 3 | true 3)."
+            },
+            {
+              "id": "F24-FRQ-4e",
+              "label": "e",
+              "points": 5,
+              "tags": [
+                "event_relations_independence"
+              ],
+              "subskills": [
+                "independence_check"
+              ],
+              "has_figure": false,
+              "summary": "Are T3 and P3 independent? Justify."
+            }
+          ]
+        },
+        {
+          "id": "F24-FRQ-5",
+          "number": "5",
+          "points": 32,
+          "block_template": "pdf_cdf",
+          "scenario": "Device lifetime in three phases",
+          "tags": [
+            "pdf_normalization_k",
+            "cdf_construction_and_use",
+            "median_percentile_from_cdf"
+          ],
+          "subskills": [
+            "verify_valid_pdf",
+            "exp_tail_in_piecewise_pdf",
+            "fill_missing_cdf_piece",
+            "tail_probability_from_cdf",
+            "solve_percentile"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "F24-FRQ-5a",
+              "label": "a",
+              "points": 10,
+              "tags": [
+                "pdf_normalization_k"
+              ],
+              "subskills": [
+                "verify_valid_pdf",
+                "exp_tail_in_piecewise_pdf"
+              ],
+              "has_figure": false,
+              "summary": "Verify a piecewise pdf (constant + exponential tail) is valid."
+            },
+            {
+              "id": "F24-FRQ-5b",
+              "label": "b",
+              "points": 10,
+              "tags": [
+                "cdf_construction_and_use"
+              ],
+              "subskills": [
+                "fill_missing_cdf_piece"
+              ],
+              "has_figure": false,
+              "summary": "Missing CDF value for x >= 5."
+            },
+            {
+              "id": "F24-FRQ-5c",
+              "label": "c",
+              "points": 4,
+              "tags": [
+                "cdf_construction_and_use"
+              ],
+              "subskills": [
+                "tail_probability_from_cdf"
+              ],
+              "has_figure": false,
+              "summary": "P(lifetime > 1 year)."
+            },
+            {
+              "id": "F24-FRQ-5d",
+              "label": "d",
+              "points": 8,
+              "tags": [
+                "median_percentile_from_cdf"
+              ],
+              "subskills": [
+                "solve_percentile"
+              ],
+              "has_figure": false,
+              "summary": "25th percentile of lifetime."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

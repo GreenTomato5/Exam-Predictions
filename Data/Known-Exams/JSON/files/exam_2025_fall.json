@@ -1,0 +1,431 @@
+{
+  "exam_id": "F25",
+  "term": "Fall",
+  "year": 2025,
+  "exam_index": 4,
+  "age": 1,
+  "version": "V1",
+  "source_file": "Exam_1_FALL_2025.pdf",
+  "total_points": 105,
+  "sections": [
+    {
+      "type": "TF",
+      "n_items": 6,
+      "points": 12,
+      "items": [
+        {
+          "id": "F25-TF-1.1",
+          "number": "1.1",
+          "points": 2,
+          "tags": [
+            "joint_discrete_rv"
+          ],
+          "subskills": [
+            "independence_of_rvs",
+            "joint_pmf_factorization"
+          ],
+          "has_figure": false,
+          "summary": "One joint cell factorizes: does that imply independence?"
+        },
+        {
+          "id": "F25-TF-1.2",
+          "number": "1.2",
+          "points": 2,
+          "tags": [
+            "event_relations_independence"
+          ],
+          "subskills": [
+            "three_event_reasoning"
+          ],
+          "has_figure": false,
+          "summary": "P(A,B,C)=0 forces pairwise intersections with C to be 0?"
+        },
+        {
+          "id": "F25-TF-1.3",
+          "number": "1.3",
+          "points": 2,
+          "tags": [
+            "pdf_cdf_properties"
+          ],
+          "subskills": [
+            "symmetric_pdf_median"
+          ],
+          "has_figure": false,
+          "summary": "Even pdf on [-c, c] implies median 0."
+        },
+        {
+          "id": "F25-TF-1.4",
+          "number": "1.4",
+          "points": 2,
+          "tags": [
+            "expectation_variance_linear"
+          ],
+          "subskills": [
+            "linear_transform"
+          ],
+          "has_figure": false,
+          "summary": "E[Y]=SD(Y) for Y=5X+35 from given E[X], SD(X)."
+        },
+        {
+          "id": "F25-TF-1.5",
+          "number": "1.5",
+          "points": 2,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "forward_vs_backward_problems"
+          ],
+          "has_figure": false,
+          "summary": "Define forward vs backward Normal problems."
+        },
+        {
+          "id": "F25-TF-1.6",
+          "number": "1.6",
+          "points": 2,
+          "tags": [
+            "binomial_conceptual"
+          ],
+          "subskills": [
+            "bins_conditions",
+            "identify_non_binomial"
+          ],
+          "has_figure": false,
+          "summary": "Sampling without replacement from 60: still Binomial?"
+        }
+      ]
+    },
+    {
+      "type": "MC",
+      "n_items": 5,
+      "points": 15,
+      "items": [
+        {
+          "id": "F25-MC-2.1",
+          "number": "2.1",
+          "points": 3,
+          "tags": [
+            "boxplot_interpretation_robustness"
+          ],
+          "subskills": [
+            "effect_of_data_change"
+          ],
+          "has_figure": true,
+          "summary": "Which boxplot components stay unchanged after correcting one value."
+        },
+        {
+          "id": "F25-MC-2.2",
+          "number": "2.2",
+          "points": 3,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "empirical_rule",
+            "linear_transform_invariance",
+            "symmetry_mean_median_mode"
+          ],
+          "has_figure": false,
+          "summary": "Identify the false statement about a Normal height model."
+        },
+        {
+          "id": "F25-MC-2.3",
+          "number": "2.3",
+          "points": 3,
+          "tags": [
+            "binomial_conceptual"
+          ],
+          "subskills": [
+            "bins_conditions"
+          ],
+          "has_figure": false,
+          "summary": "Which BINS condition fails with two genotype groups."
+        },
+        {
+          "id": "F25-MC-2.4",
+          "number": "2.4",
+          "points": 3,
+          "tags": [
+            "pdf_normalization_k",
+            "expected_value_computation"
+          ],
+          "subskills": [
+            "integrate_to_one",
+            "mean_from_pdf"
+          ],
+          "has_figure": false,
+          "summary": "E[X] for pdf k x^2 on [0,3]."
+        },
+        {
+          "id": "F25-MC-2.5",
+          "number": "2.5",
+          "points": 3,
+          "tags": [
+            "conditional_bayes_total_prob"
+          ],
+          "subskills": [
+            "mixture_pmf",
+            "total_probability"
+          ],
+          "has_figure": false,
+          "summary": "P(Y=0) when Y|X is defined piecewise from a Binomial X."
+        }
+      ]
+    },
+    {
+      "type": "FRQ",
+      "n_items": 3,
+      "points": 78,
+      "items": [
+        {
+          "id": "F25-FRQ-3",
+          "number": "3",
+          "points": 23,
+          "block_template": "normal",
+          "scenario": "Basketball game lengths",
+          "tags": [
+            "normal_forward",
+            "normal_backward",
+            "boxplot_fences_iqr"
+          ],
+          "subskills": [
+            "within_k_sd",
+            "quartiles_iqr",
+            "compute_iqr",
+            "inner_fences",
+            "outlier_identification",
+            "iqr_across_distributions"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "F25-FRQ-3a",
+              "label": "a",
+              "points": 6,
+              "tags": [
+                "normal_forward"
+              ],
+              "subskills": [
+                "within_k_sd"
+              ],
+              "has_figure": false,
+              "summary": "P(within 1.5 SD of the mean)."
+            },
+            {
+              "id": "F25-FRQ-3b",
+              "label": "b",
+              "points": 10,
+              "tags": [
+                "normal_backward",
+                "boxplot_fences_iqr"
+              ],
+              "subskills": [
+                "quartiles_iqr",
+                "compute_iqr"
+              ],
+              "has_figure": false,
+              "summary": "Population IQR from Normal quartiles."
+            },
+            {
+              "id": "F25-FRQ-3c",
+              "label": "c",
+              "points": 4,
+              "tags": [
+                "boxplot_fences_iqr"
+              ],
+              "subskills": [
+                "inner_fences",
+                "outlier_identification"
+              ],
+              "has_figure": false,
+              "summary": "Population inner fences and flag sample points."
+            },
+            {
+              "id": "F25-FRQ-3d",
+              "label": "d",
+              "points": 3,
+              "tags": [
+                "boxplot_fences_iqr"
+              ],
+              "subskills": [
+                "iqr_across_distributions"
+              ],
+              "has_figure": false,
+              "summary": "Which IQR-vs-mean statement is incorrect (Normal, Exponential, Uniform)."
+            }
+          ]
+        },
+        {
+          "id": "F25-FRQ-4",
+          "number": "4",
+          "points": 27,
+          "block_template": "prob_rules",
+          "scenario": "Cat high-five training: treat vs no treat",
+          "tags": [
+            "event_relations_independence",
+            "conditional_bayes_total_prob"
+          ],
+          "subskills": [
+            "independence_check",
+            "tree_diagram",
+            "total_probability",
+            "bayes_theorem",
+            "decision_threshold"
+          ],
+          "has_figure": true,
+          "parts": [
+            {
+              "id": "F25-FRQ-4a",
+              "label": "a",
+              "points": 3,
+              "tags": [
+                "event_relations_independence"
+              ],
+              "subskills": [
+                "independence_check"
+              ],
+              "has_figure": false,
+              "summary": "Treat and high-five independent?"
+            },
+            {
+              "id": "F25-FRQ-4b",
+              "label": "b",
+              "points": 2,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "tree_diagram"
+              ],
+              "has_figure": false,
+              "summary": "Label missing tree branches A, B, C."
+            },
+            {
+              "id": "F25-FRQ-4c",
+              "label": "c",
+              "points": 4,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "total_probability",
+                "tree_diagram"
+              ],
+              "has_figure": false,
+              "summary": "P(nag)."
+            },
+            {
+              "id": "F25-FRQ-4d",
+              "label": "d",
+              "points": 8,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "total_probability"
+              ],
+              "has_figure": false,
+              "summary": "P(high-five)."
+            },
+            {
+              "id": "F25-FRQ-4e",
+              "label": "e",
+              "points": 10,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "bayes_theorem",
+                "decision_threshold"
+              ],
+              "has_figure": false,
+              "summary": "P(no treat | high-five) and a restart decision."
+            }
+          ]
+        },
+        {
+          "id": "F25-FRQ-5",
+          "number": "5",
+          "points": 28,
+          "block_template": "pdf_cdf",
+          "scenario": "IT ticket resolution time",
+          "tags": [
+            "pdf_normalization_k",
+            "cdf_construction_and_use",
+            "conditional_continuous",
+            "median_percentile_from_cdf"
+          ],
+          "subskills": [
+            "integrate_to_one",
+            "piecewise_integration",
+            "exp_tail_in_piecewise_pdf",
+            "interval_probability_from_cdf",
+            "conditional_tail_probability",
+            "memoryless_shortcut",
+            "conditional_from_cdf",
+            "upper_tail_quantile"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "F25-FRQ-5a",
+              "label": "a",
+              "points": 10,
+              "tags": [
+                "pdf_normalization_k"
+              ],
+              "subskills": [
+                "integrate_to_one",
+                "piecewise_integration",
+                "exp_tail_in_piecewise_pdf"
+              ],
+              "has_figure": false,
+              "summary": "Find k for a uniform-then-exponential-tail pdf."
+            },
+            {
+              "id": "F25-FRQ-5b",
+              "label": "b",
+              "points": 6,
+              "tags": [
+                "cdf_construction_and_use"
+              ],
+              "subskills": [
+                "interval_probability_from_cdf"
+              ],
+              "has_figure": false,
+              "summary": "P(5 < T < 15) from a supplied CDF."
+            },
+            {
+              "id": "F25-FRQ-5c",
+              "label": "c",
+              "points": 6,
+              "tags": [
+                "conditional_continuous"
+              ],
+              "subskills": [
+                "conditional_tail_probability",
+                "memoryless_shortcut",
+                "conditional_from_cdf"
+              ],
+              "has_figure": false,
+              "summary": "P(T >= 15 | T >= 5)."
+            },
+            {
+              "id": "F25-FRQ-5d",
+              "label": "d",
+              "points": 6,
+              "tags": [
+                "median_percentile_from_cdf"
+              ],
+              "subskills": [
+                "upper_tail_quantile"
+              ],
+              "has_figure": false,
+              "summary": "Time exceeded by only 5% of tickets."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "exam_id": "S26",
+  "term": "Spring",
+  "year": 2026,
+  "exam_index": 5,
+  "age": 0,
+  "version": "V1",
+  "source_file": "Exam_1_SPRING_2026.pdf",
+  "total_points": 105,
+  "sections": [
+    {
+      "type": "TF",
+      "n_items": 6,
+      "points": 12,
+      "items": [
+        {
+          "id": "S26-TF-1.1",
+          "number": "1.1",
+          "points": 2,
+          "tags": [
+            "pdf_cdf_properties"
+          ],
+          "subskills": [
+            "interval_vs_cumulative"
+          ],
+          "has_figure": false,
+          "summary": "P(a<X<b) <= P(X<b) for a continuous X."
+        },
+        {
+          "id": "S26-TF-1.2",
+          "number": "1.2",
+          "points": 2,
+          "tags": [
+            "binomial_conceptual"
+          ],
+          "subskills": [
+            "skewness_vs_p"
+          ],
+          "has_figure": false,
+          "summary": "Skew flips from positive to negative as p goes 0.9 to 0.1?"
+        },
+        {
+          "id": "S26-TF-1.3",
+          "number": "1.3",
+          "points": 2,
+          "tags": [
+            "binomial_conceptual"
+          ],
+          "subskills": [
+            "variance_bounds"
+          ],
+          "has_figure": false,
+          "summary": "Var(X) cannot exceed n."
+        },
+        {
+          "id": "S26-TF-1.4",
+          "number": "1.4",
+          "points": 2,
+          "tags": [
+            "binomial_conceptual"
+          ],
+          "subskills": [
+            "support",
+            "compare_with_poisson"
+          ],
+          "has_figure": false,
+          "summary": "Support of Binomial is a subset of Poisson support."
+        },
+        {
+          "id": "S26-TF-1.5",
+          "number": "1.5",
+          "points": 2,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "zscore_interpretation"
+          ],
+          "has_figure": false,
+          "summary": "Negative z-score means x below the mean."
+        },
+        {
+          "id": "S26-TF-1.6",
+          "number": "1.6",
+          "points": 2,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "spread_vs_curve_shape"
+          ],
+          "has_figure": false,
+          "summary": "Smaller variance, same mean: effect on P(X <= 12)."
+        }
+      ]
+    },
+    {
+      "type": "MC",
+      "n_items": 5,
+      "points": 15,
+      "items": [
+        {
+          "id": "S26-MC-2.1",
+          "number": "2.1",
+          "points": 3,
+          "tags": [
+            "joint_discrete_rv"
+          ],
+          "subskills": [
+            "covariance_sign",
+            "independence_of_rvs",
+            "expectation_of_product",
+            "variance_of_sum"
+          ],
+          "has_figure": false,
+          "summary": "Which statement always holds for two dependent discrete variables."
+        },
+        {
+          "id": "S26-MC-2.2",
+          "number": "2.2",
+          "points": 3,
+          "tags": [
+            "poisson"
+          ],
+          "subskills": [
+            "rate_scaling"
+          ],
+          "has_figure": false,
+          "summary": "P(more than 1 request) after scaling a per-10-minute rate to 2 hours."
+        },
+        {
+          "id": "S26-MC-2.3",
+          "number": "2.3",
+          "points": 3,
+          "tags": [
+            "pdf_cdf_properties"
+          ],
+          "subskills": [
+            "pdf_shape_features"
+          ],
+          "has_figure": false,
+          "summary": "Describe the shape of a pdf k (x-5)^2 on [4,6]."
+        },
+        {
+          "id": "S26-MC-2.4",
+          "number": "2.4",
+          "points": 3,
+          "tags": [
+            "normal_backward"
+          ],
+          "subskills": [
+            "percentile_cutoff"
+          ],
+          "has_figure": false,
+          "summary": "Bottom 2.5% cutoff for package weights."
+        },
+        {
+          "id": "S26-MC-2.5",
+          "number": "2.5",
+          "points": 3,
+          "tags": [
+            "normal_backward"
+          ],
+          "subskills": [
+            "solve_mu_sigma_from_tails"
+          ],
+          "has_figure": false,
+          "summary": "Find mu, sigma from P(T>15) and P(T<5)."
+        }
+      ]
+    },
+    {
+      "type": "FRQ",
+      "n_items": 4,
+      "points": 78,
+      "items": [
+        {
+          "id": "S26-FRQ-3",
+          "number": "3",
+          "points": 15,
+          "block_template": "descriptive_stats",
+          "scenario": "Student screen time",
+          "tags": [
+            "boxplot_interpretation_robustness",
+            "boxplot_fences_iqr"
+          ],
+          "subskills": [
+            "label_boxplot_parts",
+            "mean_location_from_skew",
+            "compute_iqr",
+            "data_count_by_quartile"
+          ],
+          "has_figure": true,
+          "parts": [
+            {
+              "id": "S26-FRQ-3a",
+              "label": "a",
+              "points": 6,
+              "tags": [
+                "boxplot_interpretation_robustness"
+              ],
+              "subskills": [
+                "label_boxplot_parts"
+              ],
+              "has_figure": false,
+              "summary": "Name Q1/median/Q3 and read min, median, upper whisker values."
+            },
+            {
+              "id": "S26-FRQ-3b",
+              "label": "b",
+              "points": 3,
+              "tags": [
+                "boxplot_interpretation_robustness"
+              ],
+              "subskills": [
+                "mean_location_from_skew"
+              ],
+              "has_figure": false,
+              "summary": "Where the mean most likely sits given the skew."
+            },
+            {
+              "id": "S26-FRQ-3c",
+              "label": "c",
+              "points": 3,
+              "tags": [
+                "boxplot_fences_iqr"
+              ],
+              "subskills": [
+                "compute_iqr"
+              ],
+              "has_figure": false,
+              "summary": "Compute and interpret the IQR in context."
+            },
+            {
+              "id": "S26-FRQ-3d",
+              "label": "d",
+              "points": 3,
+              "tags": [
+                "boxplot_fences_iqr"
+              ],
+              "subskills": [
+                "data_count_by_quartile"
+              ],
+              "has_figure": false,
+              "summary": "Approximate number of points between Q1 and Q3."
+            }
+          ]
+        },
+        {
+          "id": "S26-FRQ-4",
+          "number": "4",
+          "points": 26,
+          "block_template": "discrete_dist",
+          "scenario": "Defective components in a batch of 4",
+          "tags": [
+            "binomial_computation",
+            "expectation_variance_linear",
+            "expected_value_computation"
+          ],
+          "subskills": [
+            "pmf_formula",
+            "at_least_k",
+            "mean_variance",
+            "expected_complement",
+            "linear_transform",
+            "lotus_discrete"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "S26-FRQ-4a",
+              "label": "a",
+              "points": 4,
+              "tags": [
+                "binomial_computation"
+              ],
+              "subskills": [
+                "pmf_formula"
+              ],
+              "has_figure": false,
+              "summary": "Identify the distribution, support, and pmf."
+            },
+            {
+              "id": "S26-FRQ-4b",
+              "label": "b",
+              "points": 5,
+              "tags": [
+                "binomial_computation"
+              ],
+              "subskills": [
+                "at_least_k"
+              ],
+              "has_figure": false,
+              "summary": "P(at least 2 defective)."
+            },
+            {
+              "id": "S26-FRQ-4c",
+              "label": "c",
+              "points": 5,
+              "tags": [
+                "binomial_computation",
+                "expectation_variance_linear"
+              ],
+              "subskills": [
+                "mean_variance",
+                "expected_complement",
+                "linear_transform"
+              ],
+              "has_figure": false,
+              "summary": "E[X], E[n-X], Var(X)."
+            },
+            {
+              "id": "S26-FRQ-4d",
+              "label": "d",
+              "points": 12,
+              "tags": [
+                "expected_value_computation"
+              ],
+              "subskills": [
+                "lotus_discrete"
+              ],
+              "has_figure": false,
+              "summary": "E[60/(X+1)] by LOTUS."
+            }
+          ]
+        },
+        {
+          "id": "S26-FRQ-5",
+          "number": "5",
+          "points": 17,
+          "block_template": "prob_rules",
+          "scenario": "Cat routine broken at one of four steps",
+          "tags": [
+            "conditional_bayes_total_prob",
+            "event_relations_independence"
+          ],
+          "subskills": [
+            "conditional_given_event",
+            "independence_check"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "S26-FRQ-5a",
+              "label": "a",
+              "points": 5,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "conditional_given_event"
+              ],
+              "has_figure": false,
+              "summary": "P(mad and poop-step broken) from cause shares."
+            },
+            {
+              "id": "S26-FRQ-5b",
+              "label": "b",
+              "points": 5,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "conditional_given_event"
+              ],
+              "has_figure": false,
+              "summary": "P(eat broken | happy)."
+            },
+            {
+              "id": "S26-FRQ-5c",
+              "label": "c",
+              "points": 5,
+              "tags": [
+                "conditional_bayes_total_prob"
+              ],
+              "subskills": [
+                "conditional_given_event"
+              ],
+              "has_figure": false,
+              "summary": "P(mad | poop broken)."
+            },
+            {
+              "id": "S26-FRQ-5d",
+              "label": "d",
+              "points": 2,
+              "tags": [
+                "event_relations_independence"
+              ],
+              "subskills": [
+                "independence_check"
+              ],
+              "has_figure": false,
+              "summary": "Are M and P independent?"
+            }
+          ]
+        },
+        {
+          "id": "S26-FRQ-6",
+          "number": "6",
+          "points": 20,
+          "block_template": "pdf_cdf",
+          "scenario": "GPU failure time under a stress test",
+          "tags": [
+            "cdf_construction_and_use",
+            "median_percentile_from_cdf"
+          ],
+          "subskills": [
+            "fill_missing_cdf_piece",
+            "solve_median",
+            "pick_correct_piece"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "S26-FRQ-6a",
+              "label": "a",
+              "points": 10,
+              "tags": [
+                "cdf_construction_and_use"
+              ],
+              "subskills": [
+                "fill_missing_cdf_piece"
+              ],
+              "has_figure": false,
+              "summary": "Missing CDF piece for 1 <= t < 10 (inverse-square phase)."
+            },
+            {
+              "id": "S26-FRQ-6b",
+              "label": "b",
+              "points": 10,
+              "tags": [
+                "median_percentile_from_cdf"
+              ],
+              "subskills": [
+                "solve_median",
+                "pick_correct_piece"
+              ],
+              "has_figure": false,
+              "summary": "Median failure time."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

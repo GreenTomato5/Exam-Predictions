@@ -1,0 +1,404 @@
+{
+  "exam_id": "S24",
+  "term": "Spring",
+  "year": 2024,
+  "exam_index": 1,
+  "age": 4,
+  "version": "V1",
+  "source_file": "Exam_1_Spring_2024.pdf",
+  "total_points": 105,
+  "sections": [
+    {
+      "type": "TF",
+      "n_items": 6,
+      "points": 12,
+      "items": [
+        {
+          "id": "S24-TF-1.1",
+          "number": "1.1",
+          "points": 2,
+          "tags": [
+            "binomial_conceptual"
+          ],
+          "subskills": [
+            "symmetry"
+          ],
+          "has_figure": false,
+          "summary": "Binomial with p=0.5: P(X=x) equals P(X=n-x)."
+        },
+        {
+          "id": "S24-TF-1.2",
+          "number": "1.2",
+          "points": 2,
+          "tags": [
+            "event_relations_independence"
+          ],
+          "subskills": [
+            "subset_relations"
+          ],
+          "has_figure": false,
+          "summary": "A contained in B: relation of P(A and B) to P(B)."
+        },
+        {
+          "id": "S24-TF-1.3",
+          "number": "1.3",
+          "points": 2,
+          "tags": [
+            "event_relations_independence"
+          ],
+          "subskills": [
+            "independence_check"
+          ],
+          "has_figure": false,
+          "summary": "P(A|B)=P(A) for non-empty events: must they intersect?"
+        },
+        {
+          "id": "S24-TF-1.4",
+          "number": "1.4",
+          "points": 2,
+          "tags": [
+            "poisson"
+          ],
+          "subskills": [
+            "positivity_of_mean"
+          ],
+          "has_figure": false,
+          "summary": "Poisson expected value must be positive."
+        },
+        {
+          "id": "S24-TF-1.5",
+          "number": "1.5",
+          "points": 2,
+          "tags": [
+            "boxplot_fences_iqr"
+          ],
+          "subskills": [
+            "whisker_endpoints"
+          ],
+          "has_figure": false,
+          "summary": "Where the upper whisker terminates given a five-number summary."
+        },
+        {
+          "id": "S24-TF-1.6",
+          "number": "1.6",
+          "points": 2,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "symmetry_mean_median_mode"
+          ],
+          "has_figure": false,
+          "summary": "Mode of a Normal vs its mean."
+        }
+      ]
+    },
+    {
+      "type": "MC",
+      "n_items": 5,
+      "points": 15,
+      "items": [
+        {
+          "id": "S24-MC-2.1",
+          "number": "2.1",
+          "points": 3,
+          "tags": [
+            "expectation_variance_linear"
+          ],
+          "subskills": [
+            "nonlinear_function_expectation",
+            "variance_shortcut_EX2"
+          ],
+          "has_figure": false,
+          "summary": "E[2X^2+5X+3] from a given mean and SD."
+        },
+        {
+          "id": "S24-MC-2.2",
+          "number": "2.2",
+          "points": 3,
+          "tags": [
+            "pdf_cdf_properties"
+          ],
+          "subskills": [
+            "pdf_nonneg_not_prob",
+            "point_probability_zero",
+            "cdf_monotone_limits"
+          ],
+          "has_figure": false,
+          "summary": "Identify the false statement about the pdf/cdf of a continuous variable on (0, inf)."
+        },
+        {
+          "id": "S24-MC-2.3",
+          "number": "2.3",
+          "points": 3,
+          "tags": [
+            "poisson"
+          ],
+          "subskills": [
+            "at_least_one"
+          ],
+          "has_figure": false,
+          "summary": "P(at least one accident per day) with a daily Poisson rate."
+        },
+        {
+          "id": "S24-MC-2.4",
+          "number": "2.4",
+          "points": 3,
+          "tags": [
+            "normal_properties"
+          ],
+          "subskills": [
+            "empirical_rule"
+          ],
+          "has_figure": false,
+          "summary": "Approximate P(X > mu + sigma) for unknown mu, sigma."
+        },
+        {
+          "id": "S24-MC-2.5",
+          "number": "2.5",
+          "points": 3,
+          "tags": [
+            "boxplot_interpretation_robustness"
+          ],
+          "subskills": [
+            "side_by_side_reading"
+          ],
+          "has_figure": true,
+          "summary": "Estimate how many of 32 employees exceed 15 hours from side-by-side boxplots."
+        }
+      ]
+    },
+    {
+      "type": "FRQ",
+      "n_items": 3,
+      "points": 78,
+      "items": [
+        {
+          "id": "S24-FRQ-3",
+          "number": "3",
+          "points": 24,
+          "block_template": "discrete_dist",
+          "scenario": "Food delivery wait time",
+          "tags": [
+            "exponential",
+            "binomial_computation"
+          ],
+          "subskills": [
+            "identify_distribution_parameter",
+            "point_probability_zero",
+            "tail_probability",
+            "p_from_other_distribution",
+            "point_probability"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "S24-FRQ-3a",
+              "label": "a",
+              "points": 4,
+              "tags": [
+                "exponential"
+              ],
+              "subskills": [
+                "identify_distribution_parameter"
+              ],
+              "has_figure": false,
+              "summary": "Name the distribution and parameter from a mean wait."
+            },
+            {
+              "id": "S24-FRQ-3b",
+              "label": "b",
+              "points": 4,
+              "tags": [
+                "exponential"
+              ],
+              "subskills": [
+                "point_probability_zero"
+              ],
+              "has_figure": false,
+              "summary": "Probability of waiting exactly a given time."
+            },
+            {
+              "id": "S24-FRQ-3c",
+              "label": "c",
+              "points": 6,
+              "tags": [
+                "exponential"
+              ],
+              "subskills": [
+                "tail_probability"
+              ],
+              "has_figure": false,
+              "summary": "P(wait > 25 min)."
+            },
+            {
+              "id": "S24-FRQ-3d",
+              "label": "d",
+              "points": 10,
+              "tags": [
+                "binomial_computation",
+                "exponential"
+              ],
+              "subskills": [
+                "p_from_other_distribution",
+                "point_probability"
+              ],
+              "has_figure": false,
+              "summary": "Exactly 2 of 10 orders under 25 min, with p from the exponential."
+            }
+          ]
+        },
+        {
+          "id": "S24-FRQ-4",
+          "number": "4",
+          "points": 24,
+          "block_template": "normal",
+          "scenario": "Student weights",
+          "tags": [
+            "normal_forward",
+            "normal_backward"
+          ],
+          "subskills": [
+            "tail_probability",
+            "between_two_values",
+            "top_pct_cutoff"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "S24-FRQ-4a",
+              "label": "a",
+              "points": 6,
+              "tags": [
+                "normal_forward"
+              ],
+              "subskills": [
+                "tail_probability"
+              ],
+              "has_figure": false,
+              "summary": "P(weight >= 156)."
+            },
+            {
+              "id": "S24-FRQ-4b",
+              "label": "b",
+              "points": 8,
+              "tags": [
+                "normal_forward"
+              ],
+              "subskills": [
+                "between_two_values"
+              ],
+              "has_figure": false,
+              "summary": "P(160 < weight < 168)."
+            },
+            {
+              "id": "S24-FRQ-4c",
+              "label": "c",
+              "points": 10,
+              "tags": [
+                "normal_backward"
+              ],
+              "subskills": [
+                "top_pct_cutoff"
+              ],
+              "has_figure": false,
+              "summary": "Cutoff for the top 0.25%."
+            }
+          ]
+        },
+        {
+          "id": "S24-FRQ-5",
+          "number": "5",
+          "points": 30,
+          "block_template": "pdf_cdf",
+          "scenario": "UV wavelength on nanostructures",
+          "tags": [
+            "pdf_normalization_k",
+            "cdf_construction_and_use",
+            "expected_value_computation",
+            "expectation_variance_linear"
+          ],
+          "subskills": [
+            "piecewise_integration",
+            "geometric_area_shortcut",
+            "fill_missing_cdf_piece",
+            "piecewise_continuity",
+            "interval_probability_from_cdf",
+            "mean_from_pdf",
+            "sd_of_transform"
+          ],
+          "has_figure": false,
+          "parts": [
+            {
+              "id": "S24-FRQ-5a",
+              "label": "a",
+              "points": 10,
+              "tags": [
+                "pdf_normalization_k"
+              ],
+              "subskills": [
+                "piecewise_integration",
+                "geometric_area_shortcut"
+              ],
+              "has_figure": false,
+              "summary": "Find k for a three-piece pdf (ramp, flat, ramp down)."
+            },
+            {
+              "id": "S24-FRQ-5b",
+              "label": "b",
+              "points": 6,
+              "tags": [
+                "cdf_construction_and_use"
+              ],
+              "subskills": [
+                "fill_missing_cdf_piece",
+                "piecewise_continuity"
+              ],
+              "has_figure": false,
+              "summary": "Fill in missing CDF pieces [A], [B], [C]."
+            },
+            {
+              "id": "S24-FRQ-5c",
+              "label": "c",
+              "points": 6,
+              "tags": [
+                "cdf_construction_and_use"
+              ],
+              "subskills": [
+                "interval_probability_from_cdf"
+              ],
+              "has_figure": false,
+              "summary": "P(10 < X < 12)."
+            },
+            {
+              "id": "S24-FRQ-5d",
+              "label": "d",
+              "points": 4,
+              "tags": [
+                "expected_value_computation"
+              ],
+              "subskills": [
+                "mean_from_pdf"
+              ],
+              "has_figure": false,
+              "summary": "Mean wavelength."
+            },
+            {
+              "id": "S24-FRQ-5e",
+              "label": "e",
+              "points": 4,
+              "tags": [
+                "expectation_variance_linear"
+              ],
+              "subskills": [
+                "sd_of_transform"
+              ],
+              "has_figure": false,
+              "summary": "SD of g(X)=0.1X-0.5 given Var(X)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

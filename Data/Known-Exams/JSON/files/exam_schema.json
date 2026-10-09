@@ -1,0 +1,869 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stat350-exam-record",
+  "title": "STAT 350 Exam 1 annotated record",
+  "description": "One file per exam. tags are topic ids from taxonomy.yaml. FRQ block tags/subskills are the union of their parts. 'age' is exams before the most recent (0 = newest) and drives the decay weight.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "exam_id",
+    "term",
+    "year",
+    "exam_index",
+    "age",
+    "version",
+    "source_file",
+    "total_points",
+    "sections"
+  ],
+  "properties": {
+    "exam_id": {
+      "type": "string",
+      "enum": [
+        "S24",
+        "F24",
+        "S25",
+        "F25",
+        "S26"
+      ]
+    },
+    "term": {
+      "type": "string",
+      "enum": [
+        "Spring",
+        "Fall"
+      ]
+    },
+    "year": {
+      "type": "integer"
+    },
+    "exam_index": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "type": "string"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "total_points": {
+      "const": 105
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "n_items",
+            "points",
+            "items"
+          ],
+          "properties": {
+            "type": {
+              "const": "TF"
+            },
+            "n_items": {
+              "type": "integer"
+            },
+            "points": {
+              "type": "integer"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "number",
+                  "points",
+                  "tags",
+                  "subskills",
+                  "has_figure",
+                  "summary"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^(S24|F24|S25|F25|S26)-(TF|MC|FRQ)-[0-9]+(\\.[0-9]+|[a-z])?$"
+                  },
+                  "number": {
+                    "type": "string"
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "tags": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "normal_properties",
+                        "normal_forward",
+                        "normal_backward",
+                        "binomial_conceptual",
+                        "binomial_computation",
+                        "poisson",
+                        "exponential",
+                        "pdf_normalization_k",
+                        "pdf_cdf_properties",
+                        "cdf_construction_and_use",
+                        "median_percentile_from_cdf",
+                        "expected_value_computation",
+                        "expectation_variance_linear",
+                        "conditional_continuous",
+                        "conditional_bayes_total_prob",
+                        "event_relations_independence",
+                        "joint_discrete_rv",
+                        "boxplot_fences_iqr",
+                        "boxplot_interpretation_robustness",
+                        "data_types_graphs"
+                      ]
+                    }
+                  },
+                  "subskills": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "at_least_k",
+                        "at_least_one",
+                        "bayes_theorem",
+                        "between_two_values",
+                        "bins_conditions",
+                        "cdf_monotone_limits",
+                        "compare_with_poisson",
+                        "compute_iqr",
+                        "conditional_from_cdf",
+                        "conditional_given_event",
+                        "conditional_independent_intervals",
+                        "conditional_tail_probability",
+                        "contingency_table",
+                        "covariance_sign",
+                        "data_count_by_quartile",
+                        "decision_threshold",
+                        "effect_of_data_change",
+                        "empirical_rule",
+                        "evaluate_given_cdf",
+                        "exp_tail_in_piecewise_pdf",
+                        "expectation_of_product",
+                        "expected_complement",
+                        "fill_missing_cdf_piece",
+                        "five_number_summary",
+                        "forward_vs_backward_problems",
+                        "geometric_area_shortcut",
+                        "graph_choice_categorical",
+                        "histogram_shape",
+                        "identify_distribution_parameter",
+                        "identify_non_binomial",
+                        "independence_check",
+                        "independence_of_rvs",
+                        "inner_fences",
+                        "integrate_to_one",
+                        "interval_probability_from_cdf",
+                        "interval_vs_cumulative",
+                        "iqr_across_distributions",
+                        "joint_pmf_factorization",
+                        "label_boxplot_parts",
+                        "linear_transform",
+                        "linear_transform_invariance",
+                        "lotus_continuous",
+                        "lotus_discrete",
+                        "mean_from_pdf",
+                        "mean_location_from_skew",
+                        "mean_variance",
+                        "mean_variance_relation",
+                        "memoryless",
+                        "memoryless_shortcut",
+                        "mixture_pmf",
+                        "moments_identity",
+                        "mutually_exclusive_vs_independent",
+                        "nonlinear_function_expectation",
+                        "outlier_identification",
+                        "p_from_other_distribution",
+                        "parameter_constraints",
+                        "parameter_vs_statistic",
+                        "pdf_nonneg_not_prob",
+                        "pdf_shape_features",
+                        "percentile_cutoff",
+                        "pick_correct_piece",
+                        "piecewise_continuity",
+                        "piecewise_integration",
+                        "pmf_formula",
+                        "point_probability",
+                        "point_probability_zero",
+                        "positivity_of_mean",
+                        "quartiles_iqr",
+                        "rate_scaling",
+                        "resistant_measures",
+                        "scaling_vs_sum",
+                        "sd_of_transform",
+                        "side_by_side_reading",
+                        "skew_from_shape",
+                        "skewness_vs_p",
+                        "solve_lambda_from_pmf_equality",
+                        "solve_median",
+                        "solve_mu_sigma_from_tails",
+                        "solve_percentile",
+                        "spread_vs_curve_shape",
+                        "subset_relations",
+                        "sum_independent",
+                        "support",
+                        "symmetric_pdf_median",
+                        "symmetry",
+                        "symmetry_mean_median_mode",
+                        "tail_probability",
+                        "tail_probability_from_cdf",
+                        "tail_probability_symmetry",
+                        "three_event_reasoning",
+                        "top_pct_cutoff",
+                        "total_probability",
+                        "tree_diagram",
+                        "truncated_normal_condition",
+                        "union_rule",
+                        "upper_tail_quantile",
+                        "variance_bounds",
+                        "variance_equals_mean",
+                        "variance_of_sum",
+                        "variance_shortcut_EX2",
+                        "verify_valid_pdf",
+                        "waiting_time_vs_count",
+                        "whisker_endpoints",
+                        "within_k_sd",
+                        "zscore_comparison",
+                        "zscore_compute",
+                        "zscore_interpretation"
+                      ]
+                    }
+                  },
+                  "has_figure": {
+                    "type": "boolean"
+                  },
+                  "summary": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "n_items",
+            "points",
+            "items"
+          ],
+          "properties": {
+            "type": {
+              "const": "MC"
+            },
+            "n_items": {
+              "type": "integer"
+            },
+            "points": {
+              "type": "integer"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "number",
+                  "points",
+                  "tags",
+                  "subskills",
+                  "has_figure",
+                  "summary"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^(S24|F24|S25|F25|S26)-(TF|MC|FRQ)-[0-9]+(\\.[0-9]+|[a-z])?$"
+                  },
+                  "number": {
+                    "type": "string"
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "tags": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "normal_properties",
+                        "normal_forward",
+                        "normal_backward",
+                        "binomial_conceptual",
+                        "binomial_computation",
+                        "poisson",
+                        "exponential",
+                        "pdf_normalization_k",
+                        "pdf_cdf_properties",
+                        "cdf_construction_and_use",
+                        "median_percentile_from_cdf",
+                        "expected_value_computation",
+                        "expectation_variance_linear",
+                        "conditional_continuous",
+                        "conditional_bayes_total_prob",
+                        "event_relations_independence",
+                        "joint_discrete_rv",
+                        "boxplot_fences_iqr",
+                        "boxplot_interpretation_robustness",
+                        "data_types_graphs"
+                      ]
+                    }
+                  },
+                  "subskills": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "at_least_k",
+                        "at_least_one",
+                        "bayes_theorem",
+                        "between_two_values",
+                        "bins_conditions",
+                        "cdf_monotone_limits",
+                        "compare_with_poisson",
+                        "compute_iqr",
+                        "conditional_from_cdf",
+                        "conditional_given_event",
+                        "conditional_independent_intervals",
+                        "conditional_tail_probability",
+                        "contingency_table",
+                        "covariance_sign",
+                        "data_count_by_quartile",
+                        "decision_threshold",
+                        "effect_of_data_change",
+                        "empirical_rule",
+                        "evaluate_given_cdf",
+                        "exp_tail_in_piecewise_pdf",
+                        "expectation_of_product",
+                        "expected_complement",
+                        "fill_missing_cdf_piece",
+                        "five_number_summary",
+                        "forward_vs_backward_problems",
+                        "geometric_area_shortcut",
+                        "graph_choice_categorical",
+                        "histogram_shape",
+                        "identify_distribution_parameter",
+                        "identify_non_binomial",
+                        "independence_check",
+                        "independence_of_rvs",
+                        "inner_fences",
+                        "integrate_to_one",
+                        "interval_probability_from_cdf",
+                        "interval_vs_cumulative",
+                        "iqr_across_distributions",
+                        "joint_pmf_factorization",
+                        "label_boxplot_parts",
+                        "linear_transform",
+                        "linear_transform_invariance",
+                        "lotus_continuous",
+                        "lotus_discrete",
+                        "mean_from_pdf",
+                        "mean_location_from_skew",
+                        "mean_variance",
+                        "mean_variance_relation",
+                        "memoryless",
+                        "memoryless_shortcut",
+                        "mixture_pmf",
+                        "moments_identity",
+                        "mutually_exclusive_vs_independent",
+                        "nonlinear_function_expectation",
+                        "outlier_identification",
+                        "p_from_other_distribution",
+                        "parameter_constraints",
+                        "parameter_vs_statistic",
+                        "pdf_nonneg_not_prob",
+                        "pdf_shape_features",
+                        "percentile_cutoff",
+                        "pick_correct_piece",
+                        "piecewise_continuity",
+                        "piecewise_integration",
+                        "pmf_formula",
+                        "point_probability",
+                        "point_probability_zero",
+                        "positivity_of_mean",
+                        "quartiles_iqr",
+                        "rate_scaling",
+                        "resistant_measures",
+                        "scaling_vs_sum",
+                        "sd_of_transform",
+                        "side_by_side_reading",
+                        "skew_from_shape",
+                        "skewness_vs_p",
+                        "solve_lambda_from_pmf_equality",
+                        "solve_median",
+                        "solve_mu_sigma_from_tails",
+                        "solve_percentile",
+                        "spread_vs_curve_shape",
+                        "subset_relations",
+                        "sum_independent",
+                        "support",
+                        "symmetric_pdf_median",
+                        "symmetry",
+                        "symmetry_mean_median_mode",
+                        "tail_probability",
+                        "tail_probability_from_cdf",
+                        "tail_probability_symmetry",
+                        "three_event_reasoning",
+                        "top_pct_cutoff",
+                        "total_probability",
+                        "tree_diagram",
+                        "truncated_normal_condition",
+                        "union_rule",
+                        "upper_tail_quantile",
+                        "variance_bounds",
+                        "variance_equals_mean",
+                        "variance_of_sum",
+                        "variance_shortcut_EX2",
+                        "verify_valid_pdf",
+                        "waiting_time_vs_count",
+                        "whisker_endpoints",
+                        "within_k_sd",
+                        "zscore_comparison",
+                        "zscore_compute",
+                        "zscore_interpretation"
+                      ]
+                    }
+                  },
+                  "has_figure": {
+                    "type": "boolean"
+                  },
+                  "summary": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "n_items",
+            "points",
+            "items"
+          ],
+          "properties": {
+            "type": {
+              "const": "FRQ"
+            },
+            "n_items": {
+              "type": "integer"
+            },
+            "points": {
+              "type": "integer"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "number",
+                  "points",
+                  "block_template",
+                  "scenario",
+                  "tags",
+                  "subskills",
+                  "has_figure",
+                  "parts"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^(S24|F24|S25|F25|S26)-(TF|MC|FRQ)-[0-9]+(\\.[0-9]+|[a-z])?$"
+                  },
+                  "number": {
+                    "type": "string"
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "tags": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "normal_properties",
+                        "normal_forward",
+                        "normal_backward",
+                        "binomial_conceptual",
+                        "binomial_computation",
+                        "poisson",
+                        "exponential",
+                        "pdf_normalization_k",
+                        "pdf_cdf_properties",
+                        "cdf_construction_and_use",
+                        "median_percentile_from_cdf",
+                        "expected_value_computation",
+                        "expectation_variance_linear",
+                        "conditional_continuous",
+                        "conditional_bayes_total_prob",
+                        "event_relations_independence",
+                        "joint_discrete_rv",
+                        "boxplot_fences_iqr",
+                        "boxplot_interpretation_robustness",
+                        "data_types_graphs"
+                      ]
+                    }
+                  },
+                  "subskills": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "at_least_k",
+                        "at_least_one",
+                        "bayes_theorem",
+                        "between_two_values",
+                        "bins_conditions",
+                        "cdf_monotone_limits",
+                        "compare_with_poisson",
+                        "compute_iqr",
+                        "conditional_from_cdf",
+                        "conditional_given_event",
+                        "conditional_independent_intervals",
+                        "conditional_tail_probability",
+                        "contingency_table",
+                        "covariance_sign",
+                        "data_count_by_quartile",
+                        "decision_threshold",
+                        "effect_of_data_change",
+                        "empirical_rule",
+                        "evaluate_given_cdf",
+                        "exp_tail_in_piecewise_pdf",
+                        "expectation_of_product",
+                        "expected_complement",
+                        "fill_missing_cdf_piece",
+                        "five_number_summary",
+                        "forward_vs_backward_problems",
+                        "geometric_area_shortcut",
+                        "graph_choice_categorical",
+                        "histogram_shape",
+                        "identify_distribution_parameter",
+                        "identify_non_binomial",
+                        "independence_check",
+                        "independence_of_rvs",
+                        "inner_fences",
+                        "integrate_to_one",
+                        "interval_probability_from_cdf",
+                        "interval_vs_cumulative",
+                        "iqr_across_distributions",
+                        "joint_pmf_factorization",
+                        "label_boxplot_parts",
+                        "linear_transform",
+                        "linear_transform_invariance",
+                        "lotus_continuous",
+                        "lotus_discrete",
+                        "mean_from_pdf",
+                        "mean_location_from_skew",
+                        "mean_variance",
+                        "mean_variance_relation",
+                        "memoryless",
+                        "memoryless_shortcut",
+                        "mixture_pmf",
+                        "moments_identity",
+                        "mutually_exclusive_vs_independent",
+                        "nonlinear_function_expectation",
+                        "outlier_identification",
+                        "p_from_other_distribution",
+                        "parameter_constraints",
+                        "parameter_vs_statistic",
+                        "pdf_nonneg_not_prob",
+                        "pdf_shape_features",
+                        "percentile_cutoff",
+                        "pick_correct_piece",
+                        "piecewise_continuity",
+                        "piecewise_integration",
+                        "pmf_formula",
+                        "point_probability",
+                        "point_probability_zero",
+                        "positivity_of_mean",
+                        "quartiles_iqr",
+                        "rate_scaling",
+                        "resistant_measures",
+                        "scaling_vs_sum",
+                        "sd_of_transform",
+                        "side_by_side_reading",
+                        "skew_from_shape",
+                        "skewness_vs_p",
+                        "solve_lambda_from_pmf_equality",
+                        "solve_median",
+                        "solve_mu_sigma_from_tails",
+                        "solve_percentile",
+                        "spread_vs_curve_shape",
+                        "subset_relations",
+                        "sum_independent",
+                        "support",
+                        "symmetric_pdf_median",
+                        "symmetry",
+                        "symmetry_mean_median_mode",
+                        "tail_probability",
+                        "tail_probability_from_cdf",
+                        "tail_probability_symmetry",
+                        "three_event_reasoning",
+                        "top_pct_cutoff",
+                        "total_probability",
+                        "tree_diagram",
+                        "truncated_normal_condition",
+                        "union_rule",
+                        "upper_tail_quantile",
+                        "variance_bounds",
+                        "variance_equals_mean",
+                        "variance_of_sum",
+                        "variance_shortcut_EX2",
+                        "verify_valid_pdf",
+                        "waiting_time_vs_count",
+                        "whisker_endpoints",
+                        "within_k_sd",
+                        "zscore_comparison",
+                        "zscore_compute",
+                        "zscore_interpretation"
+                      ]
+                    }
+                  },
+                  "has_figure": {
+                    "type": "boolean"
+                  },
+                  "block_template": {
+                    "type": "string",
+                    "enum": [
+                      "pdf_cdf",
+                      "normal",
+                      "prob_rules",
+                      "discrete_dist",
+                      "descriptive_stats"
+                    ]
+                  },
+                  "scenario": {
+                    "type": "string"
+                  },
+                  "parts": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "id",
+                        "label",
+                        "points",
+                        "tags",
+                        "subskills",
+                        "has_figure",
+                        "summary"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^(S24|F24|S25|F25|S26)-(TF|MC|FRQ)-[0-9]+(\\.[0-9]+|[a-z])?$"
+                        },
+                        "number": {
+                          "type": "string"
+                        },
+                        "points": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "tags": {
+                          "type": "array",
+                          "minItems": 1,
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "normal_properties",
+                              "normal_forward",
+                              "normal_backward",
+                              "binomial_conceptual",
+                              "binomial_computation",
+                              "poisson",
+                              "exponential",
+                              "pdf_normalization_k",
+                              "pdf_cdf_properties",
+                              "cdf_construction_and_use",
+                              "median_percentile_from_cdf",
+                              "expected_value_computation",
+                              "expectation_variance_linear",
+                              "conditional_continuous",
+                              "conditional_bayes_total_prob",
+                              "event_relations_independence",
+                              "joint_discrete_rv",
+                              "boxplot_fences_iqr",
+                              "boxplot_interpretation_robustness",
+                              "data_types_graphs"
+                            ]
+                          }
+                        },
+                        "subskills": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "at_least_k",
+                              "at_least_one",
+                              "bayes_theorem",
+                              "between_two_values",
+                              "bins_conditions",
+                              "cdf_monotone_limits",
+                              "compare_with_poisson",
+                              "compute_iqr",
+                              "conditional_from_cdf",
+                              "conditional_given_event",
+                              "conditional_independent_intervals",
+                              "conditional_tail_probability",
+                              "contingency_table",
+                              "covariance_sign",
+                              "data_count_by_quartile",
+                              "decision_threshold",
+                              "effect_of_data_change",
+                              "empirical_rule",
+                              "evaluate_given_cdf",
+                              "exp_tail_in_piecewise_pdf",
+                              "expectation_of_product",
+                              "expected_complement",
+                              "fill_missing_cdf_piece",
+                              "five_number_summary",
+                              "forward_vs_backward_problems",
+                              "geometric_area_shortcut",
+                              "graph_choice_categorical",
+                              "histogram_shape",
+                              "identify_distribution_parameter",
+                              "identify_non_binomial",
+                              "independence_check",
+                              "independence_of_rvs",
+                              "inner_fences",
+                              "integrate_to_one",
+                              "interval_probability_from_cdf",
+                              "interval_vs_cumulative",
+                              "iqr_across_distributions",
+                              "joint_pmf_factorization",
+                              "label_boxplot_parts",
+                              "linear_transform",
+                              "linear_transform_invariance",
+                              "lotus_continuous",
+                              "lotus_discrete",
+                              "mean_from_pdf",
+                              "mean_location_from_skew",
+                              "mean_variance",
+                              "mean_variance_relation",
+                              "memoryless",
+                              "memoryless_shortcut",
+                              "mixture_pmf",
+                              "moments_identity",
+                              "mutually_exclusive_vs_independent",
+                              "nonlinear_function_expectation",
+                              "outlier_identification",
+                              "p_from_other_distribution",
+                              "parameter_constraints",
+                              "parameter_vs_statistic",
+                              "pdf_nonneg_not_prob",
+                              "pdf_shape_features",
+                              "percentile_cutoff",
+                              "pick_correct_piece",
+                              "piecewise_continuity",
+                              "piecewise_integration",
+                              "pmf_formula",
+                              "point_probability",
+                              "point_probability_zero",
+                              "positivity_of_mean",
+                              "quartiles_iqr",
+                              "rate_scaling",
+                              "resistant_measures",
+                              "scaling_vs_sum",
+                              "sd_of_transform",
+                              "side_by_side_reading",
+                              "skew_from_shape",
+                              "skewness_vs_p",
+                              "solve_lambda_from_pmf_equality",
+                              "solve_median",
+                              "solve_mu_sigma_from_tails",
+                              "solve_percentile",
+                              "spread_vs_curve_shape",
+                              "subset_relations",
+                              "sum_independent",
+                              "support",
+                              "symmetric_pdf_median",
+                              "symmetry",
+                              "symmetry_mean_median_mode",
+                              "tail_probability",
+                              "tail_probability_from_cdf",
+                              "tail_probability_symmetry",
+                              "three_event_reasoning",
+                              "top_pct_cutoff",
+                              "total_probability",
+                              "tree_diagram",
+                              "truncated_normal_condition",
+                              "union_rule",
+                              "upper_tail_quantile",
+                              "variance_bounds",
+                              "variance_equals_mean",
+                              "variance_of_sum",
+                              "variance_shortcut_EX2",
+                              "verify_valid_pdf",
+                              "waiting_time_vs_count",
+                              "whisker_endpoints",
+                              "within_k_sd",
+                              "zscore_comparison",
+                              "zscore_compute",
+                              "zscore_interpretation"
+                            ]
+                          }
+                        },
+                        "has_figure": {
+                          "type": "boolean"
+                        },
+                        "summary": {
+                          "type": "string"
+                        },
+                        "label": {
+                          "type": "string",
+                          "pattern": "^[a-z]$"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
