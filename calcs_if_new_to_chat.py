@@ -1,8 +1,10 @@
 import loader
 import math
+from question_types import QuestionsType
 
 exam_loader = loader.exam_loader()
 
+    
 class Calculations:
     
     _instance = None
@@ -18,13 +20,7 @@ class Calculations:
     def exam_info(self):
         pass
     
-    def get_mcq_distribution(self):
-        pass
-    
-    def get_frq_distribution(self):
-        pass
-            
-    def get_tf_distribution(self, decay = 1):
+    def get_question_distribution(self, decay = 1, type=QuestionsType):
         exams = self.exams
         
         # (age, probability array)
@@ -32,22 +28,27 @@ class Calculations:
         
         # collect probabilities of each tag type occurinng in TF questions for all the exams, throw that in distributions array
         for exam in exams:
-            questions = exam['sections']['type' == 'TF']['items']
-        
+            # Find the section in the list where the 'type' matches the requested type
+            section = next((s for s in exam['sections'] if s.get('type') == type.value), None)
+            
+            # should never hit
+            if not section:
+                print(f"something bad happened, {exam['exam_id']} has no section type {type.value}")
+                continue
+                
+            questions = section['items']
             results = []
-            pts = exam['sections']['type' == 'TF']['points']
+            pts = section['points']
             
             for question in questions:
                 for tag in question['tags']:
                     if tag not in [tag_r for tag_r, weight in results]:
-                        results.append((tag, (question['points']/(pts*len(question['tags'])))))
+                        results.append((tag, (question['points'] / (pts * len(question['tags'])))))
                     else:
                         index = [tag_r2 == tag for tag_r2, weight in results].index(True)
                         results[index] = (tag, results[index][1] + (question['points'] / (pts * len(question['tags']))))            
-            distribution.append((exam['age'], results))      
-            
-        print(distribution[0])  
-        
+            distribution.append((exam['age'], results))  
+                    
         # normalize the probabilities so unc exams are less important
         # (tag, probability)
         probabilities = []
@@ -71,13 +72,3 @@ class Calculations:
             
         return probabilities
             
-calc = Calculations()
-
-res = calc.get_tf_distribution(decay=4)
-
-sum = 0
-
-for result in sorted(res, key=lambda x: x[1], reverse=True):
-    sum += result[1]
-    print(f"Name: {result[0]} Probability: {result[1]}")
-print(f'Total P: {sum}')
