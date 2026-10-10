@@ -20,6 +20,22 @@ class Calculations:
     def exam_info(self):
         pass
     
+    # all exams have 105 pts
+    def get_mean_exam(self):
+        
+        # (num questions, weight)
+        n_frq, n_mcq, n_tf = (0,0), (0,0), (0,0)
+        n_exams = len(self.exams)
+        
+        for exam in self.exams:
+            for section in exam['sections']:
+                if (section.get('type') == QuestionsType.TF):
+                    n_tf = (n_tf[0] + (section.get('n items')/n_exams), n_tf[1] + (section.get('points')/n_exams))
+                elif (section.get('type') == QuestionsType.MCQ):
+                    n_mcq = (n_mcq[0] + (section.get('n items')/n_exams), n_tf[1] + (section.get('points')/n_exams))
+                elif (section.get('type') == QuestionsType.TF):
+                    n_frq = (n_frq[0] + (section.get('n items')/n_exams), n_tf[1] + (section.get('points')/n_exams))
+    
     def get_question_distribution(self, decay = 1, type=QuestionsType):
         exams = self.exams
         
@@ -62,7 +78,7 @@ class Calculations:
         for exam_dist in distribution:
             # tag is (name, probabiliti)
             for tag in exam_dist[1]:
-                tag = (tag[0], tag[1] * ((math.e**(-lmda * exam_dist[0]))/total_age))
+                tag = (tag[0], tag[1] * ((math.e**(-lmda * (4-exam_dist[0])))/total_age))
                 
                 if tag[0] not in [tag_r for tag_r, weight in probabilities]:
                     probabilities.append(tag)
