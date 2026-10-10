@@ -1,4 +1,5 @@
-
-- Decay weights: "exponential decay weighting half-life", "recency weighted estimation".
-- Probability with small samples: "beta-binomial posterior mean", "Laplace smoothing".
-- Evaluation: "Brier score"
+TODO:
+- beta-binomial posterior mean
+- Laplace smoothing
+- Brier score eval
+- mcq/frq probability

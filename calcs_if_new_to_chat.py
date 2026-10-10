@@ -1,53 +1,83 @@
 import loader
-import random
+import math
 
-loader = loader.exam_loader()
+exam_loader = loader.exam_loader()
 
-class calculations:
+class Calculations:
     
-    def __new__(self):
-        if not hasattr(self, 'instance'):
-            self.instance = super(calculations, self).__new__(self)
-        return self.instance
+    _instance = None
     
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Calculations, cls).__new__(cls)
+        return cls._instance
     
     def __init__(self):
-        self.exams = loader.get_exams()
+        self.exams = exam_loader.get_exams()
     
     def exam_info(self):
-        exam = self.exams[random.randrange(0,len(self.exams) -1 , 1)]
-        # print(f"Exam: {exam['exam_id']}")
-        # print(f"Number of pts: {exam['total_points']}")
-        # print(f"Sections: {exam['sections']}")
-                    
-        questions = exam['sections']['type' == 'TF']['items']
-        
-        results = []
-        pts = exam['sections']['type' == 'TF']['points']
+        pass
     
-        for tf_question in questions:
-            results.append((tf_question['points'], tf_question['tags']))
-        
-        print(f'Num pts: {pts}')
-        # print(f'Questions and weight: {results}\n')
-        
-        qtap = []
-        
-        for item in results:
-            if item[1] not in [tag for tag, weight in qtap]:
-                qtap.append((item[1], item[0] / pts))
-            else:
-                index = [tag == item[1] for tag, weight in qtap].index(True)
-                qtap[index] = (qtap[index][0], qtap[index][1] + (item[0] / pts))
-        
-        
-        def get_ya(e):
-            return e[1]
-        
-        
-        for tap in qtap:
-            print(tap, "\n")        
+    def get_mcq_distribution(self):
+        pass
+    
+    def get_frq_distribution(self):
+        pass
             
-calc = calculations()
+    def get_tf_distribution(self, decay = 1):
+        exams = self.exams
+        
+        # (age, probability array)
+        distribution = []
+        
+        # collect probabilities of each tag type occurinng in TF questions for all the exams, throw that in distributions array
+        for exam in exams:
+            questions = exam['sections']['type' == 'TF']['items']
+        
+            results = []
+            pts = exam['sections']['type' == 'TF']['points']
+            
+            for question in questions:
+                for tag in question['tags']:
+                    if tag not in [tag_r for tag_r, weight in results]:
+                        results.append((tag, (question['points']/(pts*len(question['tags'])))))
+                    else:
+                        index = [tag_r2 == tag for tag_r2, weight in results].index(True)
+                        results[index] = (tag, results[index][1] + (question['points'] / (pts * len(question['tags']))))            
+            distribution.append((exam['age'], results))      
+            
+        print(distribution[0])  
+        
+        # normalize the probabilities so unc exams are less important
+        # (tag, probability)
+        probabilities = []
+        
+        # configure decay
+        lmda = decay
+        
+        total_age = sum(math.e**(-lmda * age) for age, result in distribution)
 
-calc.exam_info() 
+        # exam dist is (age, array)
+        for exam_dist in distribution:
+            # tag is (name, probabiliti)
+            for tag in exam_dist[1]:
+                tag = (tag[0], tag[1] * ((math.e**(-lmda * exam_dist[0]))/total_age))
+                
+                if tag[0] not in [tag_r for tag_r, weight in probabilities]:
+                    probabilities.append(tag)
+                else:
+                    index = [tag_r == tag[0] for tag_r, weight in probabilities].index(True)
+                    probabilities[index] = (tag[0], probabilities[index][1] + tag[1]) 
+            
+        return probabilities
+            
+calc = Calculations()
+
+res = calc.get_tf_distribution(decay=4)
+
+sum = 0
+
+for result in sorted(res, key=lambda x: x[1], reverse=True):
+    sum += result[1]
+    print(f"Name: {result[0]} Probability: {result[1]}")
+print(f'Total P: {sum}')
