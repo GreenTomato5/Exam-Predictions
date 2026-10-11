@@ -20,3 +20,4 @@ def get_results(res, label):
 get_results(mc, 'MCQ')
 get_results(frq, 'FRQ')
 get_results(tf, 'True False')
+
